@@ -33,7 +33,9 @@ public class Main {
         list3.put(9, "р");
         list3.put(10, "ка");
 
-        System.out.println(list3.values());
+        System.out.println(list3);
+
+
 
 
     }
@@ -41,7 +43,7 @@ public class Main {
     public static List<Integer> randomInt() {
         //        int random_int = (int)Math.floor(Math.random()*(max-min+1)+min);
         List<Integer> list = new ArrayList<>();
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < list.size(); i++) {
             int a = (int) Math.floor(Math.random() * (1000 + 1));
             list.add(a);
         }
