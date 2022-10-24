@@ -4,18 +4,15 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Map<String, List<Integer>> list = new HashMap<>();
-        list.put("qwq", randomInt());
-        list.put("qwqwq", randomInt());
-        list.put("qwqer", randomInt());
-        list.put("qwqtt", randomInt());
-        list.put("qwquiu", randomInt());
+        List<String> words = new ArrayList<>(Arrays.asList("a b c d e f".split(" ")));
+        for (int i = 0; i < 5; i++) {
+            list.put(words.get(i), randomInt());
+        }
 
         Map<String, Integer> list2 = new HashMap<>();
-        list2.put("qwq", sumList(list.get("qwq")));
-        list2.put("qwqwq", sumList(list.get("qwqwq")));
-        list2.put("qwqer", sumList(list.get("qwqer")));
-        list2.put("qwqtt", sumList(list.get("qwqtt")));
-        list2.put("qwquiu", sumList(list.get("qwquiu")));
+        for (int i = 0; i < list.size(); i++) {
+            list2.put(words.get(i), sumList(list.get(words.get(i))));
+        }
 
         System.out.println(list2.values());
 
@@ -43,7 +40,7 @@ public class Main {
     public static List<Integer> randomInt() {
         //        int random_int = (int)Math.floor(Math.random()*(max-min+1)+min);
         List<Integer> list = new ArrayList<>();
-        for (int i = 0; i < list.size(); i++) {
+        for (int i = 0; i < 3; i++) {
             int a = (int) Math.floor(Math.random() * (1000 + 1));
             list.add(a);
         }
